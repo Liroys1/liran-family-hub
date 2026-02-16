@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020617;
+  --foreground: #e2e8f0;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+  }
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6;
+  }
+  .glass-button {
+    @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-6 py-3
+           hover:bg-white/20 transition-all duration-300;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 via-emerald-400 to-brand-300 bg-clip-text text-transparent;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(42, 165, 255, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(42, 165, 255, 0.5);
+}
+
+.drop-zone-active {
+  @apply border-brand-400 bg-brand-400/10;
+}
